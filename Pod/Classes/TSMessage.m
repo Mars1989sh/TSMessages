@@ -371,6 +371,10 @@ __weak static UIViewController *_defaultViewController;
          if(animationFinished) {
              animationFinished();
          }
+         if (currentView.callback)
+         {
+             currentView.callback();
+         }
      }];
 }
 
