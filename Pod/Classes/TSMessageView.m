@@ -49,7 +49,6 @@ static NSMutableDictionary *_notificationDesign;
 @property (nonatomic, assign) CGFloat textSpaceLeft;
 @property (nonatomic, assign) CGFloat textSpaceRight;
 
-@property (copy) void (^callback)();
 @property (copy) void (^buttonCallback)();
 
 - (CGFloat)updateHeightOfMessageView;
