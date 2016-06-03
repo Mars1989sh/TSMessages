@@ -131,8 +131,8 @@ static NSMutableDictionary *_notificationDesign;
         default:
             break;
     }
-    self.iconImageView.frame = CGRectMake(self.padding * 2,
-                                          self.padding,
+    self.iconImageView.frame = CGRectMake(self.padding,
+                                          self.padding + 10,
                                           image.size.width,
                                           image.size.height);
 }
@@ -274,8 +274,8 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         UIColor *fontColor = [UIColor colorWithHexString:[current valueForKey:@"textColor"]];
 
 
-        self.textSpaceLeft = 2 * padding;
-        if (image) self.textSpaceLeft += image.size.width + 2 * padding;
+        self.textSpaceLeft = padding;
+        if (image) self.textSpaceLeft += image.size.width + padding;
 
         // Set up title label
         _titleLabel = [[UILabel alloc] init];
@@ -328,8 +328,8 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         if (image)
         {
             _iconImageView = [[UIImageView alloc] initWithImage:image];
-            self.iconImageView.frame = CGRectMake(padding * 2,
-                                                  padding,
+            self.iconImageView.frame = CGRectMake(padding,
+                                                  padding  + 10,
                                                   image.size.width,
                                                   image.size.height);
             [self addSubview:self.iconImageView];
@@ -451,7 +451,7 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
     CGFloat padding = [self padding];
 
     self.titleLabel.frame = CGRectMake(self.textSpaceLeft,
-                                       padding,
+                                       padding + 10,
                                        screenWidth - padding - self.textSpaceLeft - self.textSpaceRight,
                                        0.0);
     [self.titleLabel sizeToFit];
